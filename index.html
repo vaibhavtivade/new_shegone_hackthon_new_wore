@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn & Play - Educational Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+</head>
+<body>
+
+  <!-- Loader Container -->
+  <iframe id="loader-frame" src="/loader" style="border: none; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: 9999;"></iframe>
+  
+  <script>
+    // Wait until the loader is visible for a few seconds, then show the main content
+    window.onload = function() {
+        setTimeout(() => {
+            document.getElementById("loader-frame").style.display = "none"; // Hide loader
+            document.getElementById("content").style.display = "block"; // Show website content
+        }, 4000); // Adjust time as needed (5 seconds)
+    };
+</script>
+
+
+    <div class="paper-cut-rain">
+      
+
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <div class="app">
+        <!-- Hero Section -->
+        <div class="hero">
+            <img src="https://images.unsplash.com/photo-1610484826967-09c5720778c7?auto=format&fit=crop&q=80&w=1000" 
+                 alt="Hero background" 
+                 class="hero-image">
+
+        
+                
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+
+                <h1>Learn & Play</h1>
+                <p>Embark on an exciting educational journey!</p>
+                <button class="primary-button" onclick="goToPage('/text')">
+                    <i data-lucide="play"></i>
+                    
+                    Learn with Text
+                </button>
+                
+                
+              
+            </div>
+        </div>
+    </div>
+    
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-buttons">
+                    <button class="nav-button" onclick="goToPage('/game1')">
+                        <i data-lucide="crown"></i>
+                        Featured Games
+                    </button>
+                    <button class="nav-button" onclick="goToPage('/game3')">
+                        <i data-lucide="book-open"></i>
+                        Language Skills
+                    </button>
+                    <button class="nav-button" onclick="goToPage('/game4')">
+                        <i data-lucide="calculator"></i>
+                        Math Adventures
+                    </button>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Games Grid -->
+        <main class="container">
+            <div class="games-grid">
+                <!-- Game Card 1 -->
+                <div class="game-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Word Explorer">
+                    <div class="game-content">
+                        <h3>Word Explorer</h3>
+                        <div class="game-level">
+                            <i data-lucide="trophy"></i>
+                            <span>Beginner</span>
+                        </div>
+                        <div class="game-rating">
+                            <i data-lucide="star" class="star-icon"></i>
+                            <span>4.5</span>
+                        </div>
+                        <button class="play-button" onclick="goToPage('/game2')">
+                            <i data-lucide="play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Number Quest">
+                    <div class="game-content">
+                        <h3>puzzle games</h3>
+                        <div class="game-level">
+                            <i data-lucide="trophy"></i>
+                            <span>Intermediate</span>
+                        </div>
+                        <div class="game-rating">
+                            <i data-lucide="star" class="star-icon"></i>
+                            <span>4.8</span>
+                        </div>
+                        <button class="play-button" onclick="goToPage('/game1')">
+                            <i data-lucide="play"></i>
+                            Play Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card">
+                    <img src="{{ url_for('static', filename='adv.jpg') }}" alt="Spelling Heroes">
+
+                    <div class="game-content">
+                        <h3>Spelling Heroes</h3>
+                        <div class="game-level">
+                            <i data-lucide="trophy"></i>
+                            <span>Advanced</span>
+                        </div>
+                        <div class="game-rating">
+                            <i data-lucide="star" class="star-icon"></i>
+                            <span>4.3</span>
+                        </div>
+                        <button class="play-button">
+                            <i data-lucide="play"></i>
+                            <a href="/game4" style="text-decoration:none;color:white">Play Now</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script>
+        lucide.createIcons();
+    </script>
+    
+     <!-- Animated Background -->
+  <div class="animated-background">
+    <div class="gradient-sphere"></div>
+    <div class="gradient-sphere"></div>
+    <div class="gradient-sphere"></div>
+  </div>
+</div>
+ 
+<!-- Features Section -->
+<div class="container">
+<section class="features" id="features">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="features-grid">
+      <div class="feature-card glass-card">
+        <i data-lucide="wand-2"></i>
+        <h3>Challenges & Quests</h3>
+        <p>Interactive missions make learning engaging.</p>
+      </div>
+      <div class="feature-card glass-card">
+        <i data-lucide="speaker"></i>
+        <h3>Personalized Learning Paths</h3>
+        <p> AI adapts courses based on a learner’s pace and style.</p>
+      </div>
+      <div class="feature-card glass-card">
+        <i data-lucide="languages"></i>
+        <h3>Multi-Language</h3>
+        <p>Support for Multiple languages and accents</p>
+      </div>
+      <div class="feature-card glass-card">
+        <i data-lucide="clock"></i>
+        <h3>Chatbots & Virtual Tutors</h3>
+        <p> 24/7 AI assistants help answer queries</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item">
+          <i data-lucide="mail"></i>
+          <div>
+            <h3>Email</h3>
+            <p>saichechare63@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i data-lucide="phone"></i>
+          <div>
+            <h3>Phone</h3>
+            <p>9730746958</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i data-lucide="map-pin"></i>
+          <div>
+            <h3>Location</h3>
+            <p>Sandip University Nashik(422213)</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form glass-card" action="/getdata" methods="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message"  name= "message" required placeholder="Message"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          <i data-lucide="send"></i>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <div class="logo">
+        <i data-lucide="bot" class="logo-icon"></i>
+        <span>Automated Feedback & Assessment </span>
+      </div>
+      <p>AI provides instant corrections and performance tracking.</p>
+      <div class="social-links">
+        <a href="#"><i data-lucide="twitter"></i></a>
+        <a href="#"><i data-lucide="facebook"></i></a>
+        <a href="#"><i data-lucide="instagram"></i></a>
+        <a href="#"><i data-lucide="linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-section">
+        <h3>Games</h3>
+        <a href="/game2">Word Explorer</a>
+        <a href="/game1">puzzle games</a>
+        <a href="/game3">Typing Speed</a>
+        <a href="/game4">Advance Math</a>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copyright-notice">
+      <p>© 2025 SUN Coder's. All rights reserved.</p>
+      <ul>
+        <li>All generated content must comply with our content guidelines and terms of service.</li>
+        <li>Users are responsible for obtaining necessary rights and permissions for any copyrighted material used.</li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
